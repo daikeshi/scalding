@@ -16,7 +16,7 @@ object ScaldingBuild extends Build {
     organization := "com.twitter",
 
     //TODO: Change to 2.10.* when Twitter moves to Scala 2.10 internally
-    scalaVersion := "2.9.3",
+    scalaVersion := "2.10.0",
 
     crossScalaVersions := Seq("2.9.3", "2.10.0"),
 
@@ -161,9 +161,9 @@ object ScaldingBuild extends Build {
   )
 
   lazy val cascadingVersion =
-    System.getenv.asScala.getOrElse("SCALDING_CASCADING_VERSION", "2.2.0")
+    System.getenv.asScala.getOrElse("SCALDING_CASCADING_VERSION", "2.5.0-wip-70")
 
-  val hadoopVersion = "1.1.2"
+  val hadoopVersion = "2.2.0"
   val algebirdVersion = "0.3.0"
   val bijectionVersion = "0.5.4"
   val chillVersion = "0.3.5"
@@ -173,7 +173,7 @@ object ScaldingBuild extends Build {
     libraryDependencies ++= Seq(
       "cascading" % "cascading-core" % cascadingVersion,
       "cascading" % "cascading-local" % cascadingVersion,
-      "cascading" % "cascading-hadoop" % cascadingVersion,
+      "cascading" % "cascading-hadoop2-mr1" % cascadingVersion,
       "com.twitter" % "maple" % "0.2.7",
       "com.twitter" %% "chill" % chillVersion,
       "com.twitter" % "chill-hadoop" % chillVersion,
