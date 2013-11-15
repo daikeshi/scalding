@@ -163,7 +163,7 @@ object ScaldingBuild extends Build {
   lazy val cascadingVersion =
     System.getenv.asScala.getOrElse("SCALDING_CASCADING_VERSION", "2.5.0-wip-70")
 
-  val hadoopVersion = "2.2.0"
+  val hadoopVersion = "1.1.2"
   val algebirdVersion = "0.3.0"
   val bijectionVersion = "0.5.4"
   val chillVersion = "0.3.5"
